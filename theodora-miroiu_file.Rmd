@@ -1,0 +1,37 @@
+---
+title: "Untitled"
+author: "Jo Saul"
+date: "2022-11-25"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(faux)
+library(tidyverse)
+library(lavaan)
+```
+
+### Instructions
+
+1. Edit this code so that it simulates 200 observations, with the self esteem variables all correlated at 0.4
+```{r}
+sim1 <- rnorm_multi(n=100,
+              mu=0,
+              sd=1,
+              r=0.2,
+              empirical=T,
+              varnames=c('selfesteem1', 'selfesteem2', 'selfesteem3', 'selfesteem4'))
+```
+
+2. Edit this code so that it models a 1 factor latent variable 'selfesteem' comprising the 4 items of sim1
+```{r}
+model <- ' 
+???
+'
+mod <- cfa(model, sim1)
+summary(mod)
+
+```
+
+
