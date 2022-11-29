@@ -16,10 +16,10 @@ library(lavaan)
 
 1. Edit this code so that it simulates 200 observations, with the self esteem variables all correlated at 0.4
 ```{r}
-sim1 <- rnorm_multi(n=100,
+sim1 <- rnorm_multi(n=200,
               mu=0,
               sd=1,
-              r=0.2,
+              r=0.4,
               empirical=T,
               varnames=c('selfesteem1', 'selfesteem2', 'selfesteem3', 'selfesteem4'))
 ```
@@ -27,7 +27,7 @@ sim1 <- rnorm_multi(n=100,
 2. Edit this code so that it models a 1 factor latent variable 'selfesteem' comprising the 4 items of sim1
 ```{r}
 model <- ' 
-???
+ selfesteem =~ selfesteem1 + selfesteem2 + selfesteem3 + selfesteem4
 '
 mod <- cfa(model, sim1)
 summary(mod)
