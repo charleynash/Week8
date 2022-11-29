@@ -27,8 +27,7 @@ sim1 <- rnorm_multi(n=200,
 2. Edit this code so that it models a 1 factor latent variable 'selfesteem' comprising the 4 items of sim1
 ```{r}
 model <- ' 
-selfesteem =~ selfesteem1 + selfesteem2 + selfesteem3 + selfesteem4
-'
+selfesteem =~ selfesteem1 + selfesteem2 + selfesteem3 + selfesteem4'
 mod <- cfa(model, sim1)
 summary(mod)
 
